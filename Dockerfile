@@ -5,6 +5,6 @@ RUN apk add --no-cache -U iperf3 && \
     /tmp/* \
     /var/tmp/*
 
-RUN echo "5 * * * * iperf3 -c speedtest.init7.net" | crontab -
+RUN echo "*/1 * * * * iperf3 -c speedtest.init7.net" | crontab -
 
 ENTRYPOINT crond -f
